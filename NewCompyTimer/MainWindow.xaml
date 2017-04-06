@@ -1,0 +1,33 @@
+﻿<Window x:Class="NewCompyTimer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NewCompyTimer"
+        mc:Ignorable="d"
+        Title="Contractor Math" Height="350" Width="525" WindowStyle="None" BorderBrush="Transparent" Background="Transparent" AllowsTransparency="True" WindowState="Maximized" IsHitTestVisible="False">
+    <!--<Window.Background>
+        <RadialGradientBrush>
+            <RadialGradientBrush.GradientStops>
+                <GradientStop Color="#88ffffff"/>
+                <GradientStop Color="#00ffffff" Offset="1"/>
+
+
+            </RadialGradientBrush.GradientStops>
+        </RadialGradientBrush>
+    </Window.Background>-->
+    <Window.DataContext>
+        <local:PeggedResourceCounter HourlyRate="50"/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock FontFamily="Impact" FontSize="48" TextWrapping="Wrap" TextAlignment="Right" Margin="50" VerticalAlignment="Bottom" Foreground="#ccc">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="#11777777"/>
+            </TextBlock.Effect>
+            I spent <Run FontWeight="Black" Foreground="#c00" Text="{Binding TotalWaitTime, StringFormat=hh\\:mm\\:ss}"/> waiting for my computer today. That cost about <Run Text="{Binding TotalWaitCost,Mode=OneWay, StringFormat=C}" FontWeight="Bold" Foreground="#0a0"/>
+        </TextBlock>
+    </Grid>
+</Window>
