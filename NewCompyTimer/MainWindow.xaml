@@ -17,7 +17,7 @@
         </RadialGradientBrush>
     </Window.Background>-->
     <Window.DataContext>
-        <local:PeggedResourceCounter HourlyRate="50"/>
+        <local:PeggedResourceCounter HourlyRate="120"/>
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
