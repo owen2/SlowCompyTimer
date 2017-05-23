@@ -10,6 +10,9 @@ namespace NewCompyTimer
 {
     public class PeggedResourceCounter : INotifyPropertyChanged
     {
+        private DateTime initTime = DateTime.Now;
+        public double WaitPercent => TotalWaitTime.TotalMilliseconds / (TotalTime.TotalMilliseconds + 1);
+        public TimeSpan TotalTime => DateTime.Now - initTime;
         public TimeSpan TotalWaitTime { get; set; } = new TimeSpan();
         public decimal HourlyRate { get; set; } = 50;
         public decimal TotalWaitCost => (decimal)TotalWaitTime.TotalHours * HourlyRate;

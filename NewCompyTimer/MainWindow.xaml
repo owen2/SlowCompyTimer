@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewCompyTimer"
         mc:Ignorable="d"
+        ShowInTaskbar="False"
         Title="Contractor Math" Height="350" Width="525" WindowStyle="None" BorderBrush="Transparent" Background="Transparent" AllowsTransparency="True" WindowState="Maximized" IsHitTestVisible="False">
     <!--<Window.Background>
         <RadialGradientBrush>
@@ -27,7 +28,7 @@
             <TextBlock.Effect>
                 <DropShadowEffect Color="#11777777"/>
             </TextBlock.Effect>
-            I spent <Run FontWeight="Black" Foreground="#c00" Text="{Binding TotalWaitTime, StringFormat=hh\\:mm\\:ss}"/> waiting for my computer today. That cost about <Run Text="{Binding TotalWaitCost,Mode=OneWay, StringFormat=C}" FontWeight="Bold" Foreground="#0a0"/>
+            I spent <Run FontWeight="Black" Foreground="#c00" Text="{Binding WaitPercent, StringFormat=p, Mode=OneWay}"/> of my time waiting for this computer. It cost <Run Text="{Binding TotalWaitCost,Mode=OneWay, StringFormat=C}" FontWeight="Bold" Foreground="#0a0"/>
         </TextBlock>
     </Grid>
 </Window>
